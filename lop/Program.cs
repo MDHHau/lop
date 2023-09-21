@@ -23,6 +23,7 @@ namespace lop
               
                 Console.WriteLine("thong tin sinh vien thu :"+(i +1));
                 L[i].nhapSV();
+                L[i].TinhDTB();
                 
                
             }

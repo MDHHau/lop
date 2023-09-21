@@ -15,20 +15,18 @@ namespace lop
         string tenSV;
         int namsinh;
         string diachi;
-        int diemtoan, diemvan, diemanh;
+        double diemtoan, diemvan, diemanh, dtb;
         // xay dung ham constructor 2
         public sinhvien()
         {}
-          public sinhvien(int ma, string ten, int ns, string dc, int Diemtoan,int Diemvan, int Diemanh)
+          public sinhvien(int ma, string ten, int ns, string dc)
             
         {
             maSV= ma;
             tenSV= ten;
             namsinh= ns;
             diachi= dc;
-            diemtoan = Diemtoan;
-            diemvan= Diemvan;
-            diemanh = Diemanh;
+            
             
         }
        
@@ -54,6 +52,11 @@ namespace lop
            
 
         }
+        public Double TinhDTB()
+        {
+            dtb = Math.Round((diemanh + diemtoan + diemvan) / 3, 1);
+            return dtb;
+        }
         public void xuatSV()
         {
            
@@ -65,15 +68,8 @@ namespace lop
             Console.WriteLine("diem toan : " + diemtoan);
             Console.WriteLine("diem van : " + diemvan);
             Console.WriteLine("diem anh : " + diemanh);
+            Console.WriteLine("diem trung binh:" + dtb);
         }
-        public void diemTB()
-        {
-            double diemtb = 0,tong=0;
-            tong = diemtoan + diemvan + diemanh ;
-            diemtb = tong / 3;
-            Console.WriteLine("diem trung binh cong :");
-            String doikieu = diemtb.ToString("F2");
-            Console.WriteLine(doikieu);
-        }
+        
     }
 }
